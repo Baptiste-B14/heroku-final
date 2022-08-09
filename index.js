@@ -18,7 +18,7 @@ const prefix = '*';
 
 
 
-
+/**
 client.on('message', message=>{
     if(!message.content.startsWith(prefix)|| message.author.bot)return;
 
@@ -31,7 +31,7 @@ client.on('message', message=>{
     if(command ==='dice6'){
         client.commands.get('dice6').execute(message, args);
     }
-});
+});*/
 
 
 process.on('exit', code => { console.log(`Le processus s'est arrêté avec le code ${code}!`)});
