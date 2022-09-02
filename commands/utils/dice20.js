@@ -1,6 +1,6 @@
 const { MessageEmbed } = require('discord.js'); 
 
-
+import{randomNumb} from './randomNumb.js';
 
 module.exports = {
     name : 'dice20',
