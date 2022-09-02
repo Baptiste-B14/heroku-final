@@ -1,5 +1,11 @@
 const { MessageEmbed } = require('discord.js'); 
 
+
+
+function getRandomInt(max) {
+    return Math.floor(Math.random() * max);
+};
+
 function coinFlip(){
     let Random = getRandomInt(2);
     let Value = "";
@@ -15,7 +21,7 @@ function coinFlip(){
         let resultat = Value2[ValueIndex];
         return resultat;
        
-}
+};
 
 
 module.exports = {
