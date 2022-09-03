@@ -7,7 +7,7 @@ function getRandomArbitrary(min, max) {
   };
 
  function randomNumb(pNumber){
-    let RandomNumber = getRandomArbitrary(1,pNumber);
+    let RandomNumber = getRandomArbitrary(1,pNumber+1);
     let RoundRandom = Math.floor(RandomNumber);
     return RoundRandom;
 };
