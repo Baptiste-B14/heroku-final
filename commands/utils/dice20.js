@@ -5,7 +5,13 @@ const { MessageEmbed } = require('discord.js');
 
 
  function randomNumb(pNumber){
-    var randomNumber = Math.floor(Math.random() * pNumber) + 1;
+  
+  
+  var a=0;
+		a=Math.random();
+		var value = 0;
+  value=Math.ceil(pNumber*a);
+
 };
 
 module.exports = {
