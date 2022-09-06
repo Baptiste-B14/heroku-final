@@ -2,16 +2,11 @@ const { MessageEmbed } = require('discord.js');
 
 //import{randomNumb} from './randomNumb.js';
 
-function getRandomArbitrary(min, max) {
-    return Math.random() * (max - min) + min;
-  };
+
 
  function randomNumb(pNumber){
-    let RandomNumber = getRandomArbitrary(1,pNumber);
-    let RoundRandom = Math.floor(RandomNumber);
-    return RoundRandom;
+    var randomNumber = Math.floor(Math.random() * pNumber) + 1;
 };
-
 
 module.exports = {
     name : 'dice20',
