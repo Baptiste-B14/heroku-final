@@ -1,27 +1,30 @@
-const { MessageEmbed } = require('discord.js'); 
+const quote = require("../../commands/utils/quote ");
 
+const prefix = '*';
 
 
 module.exports = {
-    name : 'quote',
-    description : "return a quote of Star Wars",
-    run:(client, message) => {
+    name: "messageCreate",
+    once: false,
+    execute(client, message){
         
-        if(message.content.includes("hello there")){
-            message.channel.send("General Kenobi");
-            return;
-        }else if(message.content.includes("€") ||  message.content.includes("$")){
-            message.channel.send("I smell prooooofit !");
-            return;
-
-        }else if(message.content.includes("je peux") || message.content.includes("je veux") ){
-            message.channel.send("Be Careful Not to Choke on Your Aspirations, Director");
-            return;
-
-        }else if(message.content.toLowerCase().includes("for the republic") || message.content.includes("Pour la république !") ){
-            message.channel.send("FOR THE REPUBLIC !!!");
-            return; 
-        }else return;
+        if(message.author.bot) return;
         
+        if(!message.content.startsWith(prefix)){
+           
+            quote.run(client, message);
+            
+            
+            
+            
+        }else {
+            const args = message.content.slice(prefix.length).trim().split(/ +/g);
+            const cmdName = args.shift().toLowerCase();
+            if(cmdName.length == 0) return;
+            let cmd = client.commands.get(cmdName);
+            if(cmd) cmd.run(client, message, args);
+        }
+
+       
     },
 };
