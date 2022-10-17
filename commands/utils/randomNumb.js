@@ -1,11 +1,8 @@
 
-function getRandomArbitrary(min, max) {
-    return Math.random() * (max - min) + min;
-  };
 
-export function randomNumb(pNumber){
-    let RandomNumber = getRandomArbitrary(1,pNumber);
-    let RoundRandom = Math.floor(RandomNumber);
-    return RoundRandom;
+
+export function getRandomArbitrary(max) {
+    return Math.random() * (max-1) + 1;
 };
+
 
