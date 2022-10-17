@@ -1,8 +1,7 @@
 
 
 const { MessageEmbed } = require('discord.js'); 
-
-//import{randomNumb} from './randomNumb.js';
+const { randomNumb } = require('./randomNumb');
 
 
 
@@ -13,7 +12,7 @@ module.exports = {
     description : "dice6 command",
     run:(client, message, args) => {
         
-        var a= Math.random() *5 +1;
+        var a= randomNumb.getRandomArbitrary(6);
 	
         message.channel.send(""+ a);
         
