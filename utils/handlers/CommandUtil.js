@@ -8,7 +8,7 @@ module.exports = async (client) => {
         
         client.commands.set(cmd.name, cmd);
         
-        if (!cmd.name) return console.log(`-----\nCommande non déclenché: erreur de typo\nFichier, -> ${eventFile}\n-----`)
+        if (!cmd.name) return console.log(`-----\nCommande non déclenché: erreur de typo\nFichier, -> ${cmdFile}\n-----`)
 
         console.log(`Commande chargée : ${cmd.name}`); 
     });
