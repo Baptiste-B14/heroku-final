@@ -13,13 +13,9 @@ module.exports = {
     description : "dice6 command",
     run:(client, message, args) => {
         
-        var a=0;
-		a=Math.random();
-		var value = 0;
-
-
-        value=Math.ceil(6*a);
-        message.channel.send(""+ value);
+        var a= Math.random() *5 +1;
+	
+        message.channel.send(""+ a);
         
     },
 };
