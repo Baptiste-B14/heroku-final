@@ -1,7 +1,7 @@
 
 
 
-export function getRandomArbitrary(max) {
+function getRandomArbitrary(max) {
     return Math.random() * (max-1) + 1;
 };
 
