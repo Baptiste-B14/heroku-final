@@ -13,13 +13,9 @@ module.exports = {
     description : "dice20 command",
     run:(client, message, args) => {
         
-        var a=0;
-		a=Math.random();
-		var value = 0;
-
-
-        value=Math.ceil(20*a);
-        message.channel.send(""+ value);
+        var a= randomNumb.getRandomArbitrary(20);
+	
+        message.channel.send(""+ a);
         
     },
 };
