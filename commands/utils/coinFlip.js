@@ -2,23 +2,14 @@ const { MessageEmbed } = require('discord.js');
 
 
 
-function getRandomInt(max) {
-    return Math.floor(Math.random() * max);
-};
-
 function coinFlip(){
-    let Random = getRandomInt(2);
+    let Random = randomNumb.getRandomArbitrary(2);
     let Value = "";
-    if(Random == 1){
-        Value = "Pile";
-    }
-    if(Random == 2 ){
-        Value = "Face";
-    }
+    
 
     let Value2 = ["Pile", "Face"];
-        let ValueIndex = Math.round(Math.random() * Value2.length);
-        let resultat = Value2[ValueIndex];
+        
+        let resultat = Value2[Random];
         return resultat;
        
 };
