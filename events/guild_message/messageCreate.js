@@ -9,7 +9,7 @@ module.exports = {
     execute(client, message){
         
         if(message.author.bot) return;
-        quote.run(client, message);
+        quote.run( message);
         
         if(message.content.startsWith(prefix)){
            
