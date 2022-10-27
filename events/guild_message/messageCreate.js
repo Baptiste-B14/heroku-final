@@ -9,15 +9,10 @@ module.exports = {
     execute(client, message){
         
         if(message.author.bot) return;
+        quote.run(client, message);
         
-        if(!message.content.startsWith(prefix)){
+        if(message.content.startsWith(prefix)){
            
-            quote.run(client, message);
-            
-            
-            
-            
-        }else {
             const args = message.content.slice(prefix.length).trim().split(/ +/g);
             const cmdName = args.shift().toLowerCase();
             if(cmdName.length == 0) return;
