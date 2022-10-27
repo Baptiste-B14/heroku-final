@@ -21,6 +21,8 @@ module.exports = {
         }else if(message.content.toLowerCase().includes("for the republic") || message.content.includes("Pour la république !") ){
             message.channel.send("FOR THE REPUBLIC !!!");
             return; 
+        }else if(message.content.toLowerCase().includes("explosion") || message.content.toLowerCase().includes("exploser")){
+            message.channel.send("calmitude et sérénité, rien ne va exploser");
         }else return;
         
     },
