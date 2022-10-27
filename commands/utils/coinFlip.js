@@ -3,7 +3,7 @@ const { MessageEmbed } = require('discord.js');
 
 
 function coinFlip(){
-    let Random = randomNumb.getRandomArbitrary(2);
+    let Random = Math.random()*1;
     let Value = "";
     
 
