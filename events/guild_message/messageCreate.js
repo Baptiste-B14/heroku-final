@@ -9,7 +9,7 @@ module.exports = {
     execute(client, message){
         
         if(message.author.bot) return;
-        quote.run( message);
+        //quote.run(client, message);
         if(message.content.includes("hello there")){
             message.channel.send("General Kenobi");
             return;
