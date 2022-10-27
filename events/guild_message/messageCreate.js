@@ -1,4 +1,4 @@
-const quote = require("../../commands/utils/quote.js");
+const quote = require("../../commands/utils/quote");
 
 const prefix = '*';
 
