@@ -5,7 +5,7 @@ const { MessageEmbed } = require('discord.js');
 module.exports = {
     name : 'quote',
     description : "return a quote of Star Wars",
-    run:( message) => {
+    run:(client, message) => {
         
         if(message.content.includes("hello there")){
             message.channel.send("General Kenobi");
