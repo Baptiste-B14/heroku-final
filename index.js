@@ -1,27 +1,36 @@
-const { MessageEmbed } = require('discord.js'); 
+const { Client, Collection } = require('discord.js');
+const dotenv = require('dotenv');
+
+dotenv.config();
+
+const client = new Client({ intents: 513 });
+client.commands = new Collection();
+const mongoose = require('mongoose');
+
+['CommandUtil', 'EventUtil'].forEach(handler => {  require(`./utils/handlers/${handler}`)(client) });
+ 
+
+const prefix = '*';
+ 
 
 
 
-module.exports = {
-    name : 'quote',
-    description : "return a quote of Star Wars",
-    run:(client, message) => {
-        
-        if(message.content.includes("hello there")){
-            message.channel.send("General Kenobi");
-            return;
-        }else if(message.content.includes("€") ||  message.content.includes("$")){
-            message.channel.send("I smell prooooofit !");
-            return;
+process.on('exit', code => { console.log(`Le processus s'est arrêté avec le code ${code}!`)});
 
-        }else if(message.content.includes("je peux") || message.content.includes("je veux") ){
-            message.channel.send("Be Careful Not to Choke on Your Aspirations, Director");
-            return;
+process.on('uncaughtException', (err, origin) => { console.log(`UNCAUGHT_EXCEPTION: ${err}`, `Origine: ${origin}`)});
 
-        }else if(message.content.toLowerCase().includes("for the republic") || message.content.includes("Pour la république !") ){
-            message.channel.send("FOR THE REPUBLIC !!!");
-            return; 
-        }else return;
-        
-    },
-};
+process.on('unhandleRejection', (reason, promise) => { console.log(`UNHANDLE_REJECTION: ${reason}\n-----\n`, promise) });
+
+process.on('warning', (...args) => console.log(...args));
+
+
+mongoose.connect(process.env.DATABASE_URI, {
+    autoIndex: false,
+    maxPoolSize: 10,
+    serverSelectionTimeoutMS: 5000,
+    socketTimeoutMS: 45000,
+    family: 4
+}).then(() => { console.log('Le client est connecté à la base de données!'); })
+.catch(err => { console.log(err); });
+
+client.login(process.env.TOKEN);
